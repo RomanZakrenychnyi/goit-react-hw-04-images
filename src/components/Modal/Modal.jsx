@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import style from './Modal.module.css';
 
 export const Modal = ({ closeModal, largeImage }) => {
@@ -8,4 +9,9 @@ export const Modal = ({ closeModal, largeImage }) => {
       </div>
     </div>
   );
+};
+
+Modal.propTypes = {
+  closeModal: PropTypes.func.isRequired,
+  largeImage: PropTypes.func.isRequired,
 };
