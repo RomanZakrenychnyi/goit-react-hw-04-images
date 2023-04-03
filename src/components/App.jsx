@@ -33,6 +33,10 @@ export const App = () => {
           setIsBtnActive(true);
           setLoader(false);
           setPage(1);
+
+          if (response.data.hits.length < 12) {
+            setIsBtnActive(false);
+          }
         }
 
         if (loadMoreClick) {
@@ -42,6 +46,10 @@ export const App = () => {
           setPictures([...pictures, ...response.data.hits]);
           setLoadMoreClick(false);
           setLoader(false);
+
+          if (response.data.hits.length < 12) {
+            setIsBtnActive(false);
+          }
         }
       } catch (error) {
         console.log(error);
